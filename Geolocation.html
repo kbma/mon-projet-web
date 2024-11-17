@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation Example</title>
+</head>
+<body>
+    <h1>Votre position géographique :</h1>
+    <p id="position">Cliquez sur le bouton pour obtenir votre position.</p>
+    <button id="getLocation">Obtenir ma position</button>
+
+    <script>
+        document.getElementById('getLocation').addEventListener('click', function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    document.getElementById('position').textContent = 'Latitude: ' + latitude + ', Longitude: ' + longitude;
+                }, function(error) {
+                    document.getElementById('position').textContent = 'Erreur lors de la récupération de la position : ' + error.message;
+                });
+            } else {
+                document.getElementById('position').textContent = 'La géolocalisation n\'est pas supportée par votre navigateur.';
+            }
+        });
+    </script>
+</body>
+</html>

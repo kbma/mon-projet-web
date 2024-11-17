@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage Example</title>
+</head>
+<body>
+    <h1>Bienvenue!</h1>
+    <label for="username">Entrez votre nom : </label>
+    <input type="text" id="username" placeholder="Nom">
+    <button id="saveName">Sauvegarder</button>
+    <p id="greeting"></p>
+
+    <script>
+        // Vérifier si un nom est déjà enregistré
+        if (localStorage.getItem('username')) {
+            document.getElementById('greeting').textContent = 'Bonjour, ' + localStorage.getItem('username') + '!';
+        }
+
+        // Sauvegarder le nom
+        document.getElementById('saveName').addEventListener('click', function() {
+            var username = document.getElementById('username').value;
+            localStorage.setItem('username', username); // Sauvegarde dans le localStorage
+            document.getElementById('greeting').textContent = 'Bonjour, ' + username + '!';
+        });
+    </script>
+</body>
+</html>

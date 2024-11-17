@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File API Example</title>
+</head>
+<body>
+    <h1>Téléchargez une image</h1>
+    <input type="file" id="fileInput" accept="image/*">
+    <br>
+    <img id="imagePreview" src="" alt="Prévisualisation" width="200">
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('imagePreview').src = e.target.result;
+                };
+                reader.readAsDataURL(file); // Lire l'image et afficher la prévisualisation
+            }
+        });
+    </script>
+</body>
+</html>
