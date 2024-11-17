@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Canvas</title>
+</head>
+<body>
+    <h1>API Canvas</h1>
+    <canvas id="myCanvas" width="300" height="200" style="border:1px solid #000000;"></canvas>
+    <button id="drawButton">Dessiner un rectangle</button>
+
+    <script>
+        document.getElementById('drawButton').addEventListener('click', function() {
+            var canvas = document.getElementById('myCanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(50, 50, 200, 100);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API IndexedDB</title>
+</head>
+<body>
+    <h1>API IndexedDB</h1>
+    <button id="createDB">Créer une base de données</button>
+    <button id="addData">Ajouter des données</button>
+    <button id="getData">Obtenir des données</button>
+    <p id="result"></p>
+
+    <script>
+        let db;
+
+        // Créer une base de données
+        document.getElementById('createDB').addEventListener('click', function() {
+            const request = indexedDB.open('MyDatabase', 1);
+            request.onupgradeneeded = function(event) {
+                db = event.target.result;
+                const objectStore = db.createObjectStore('users', { keyPath: 'id' });
+                objectStore.createIndex('name', 'name', { unique: false });
+            };
+
+            request.onsuccess = function() {
+                db = request.result;
+                alert("Base de données créée avec succès.");
+            };
+
+            request.onerror = function() {
+                alert("Erreur lors de la création de la base de données.");
+            };
+        });
+
+        // Ajouter des données
+        document.getElementById('addData').addEventListener('click', function() {
+            const transaction = db.transaction(['users'], 'readwrite');
+            const objectStore = transaction.objectStore('users');
+            const user = { id: 1, name: 'John Doe' };
+            objectStore.add(user);
+            
+            alert("Données ajoutées à la base.");
+        });
+
+        // Obtenir des données
+        document.getElementById('getData').addEventListener('click', function() {
+            const transaction = db.transaction(['users']);
+            const objectStore = transaction.objectStore('users');
+            const request = objectStore.get(1);
+            request.onsuccess = function() {
+                document.getElementById('result').textContent = `Nom : ${request.result.name}`;
+            };
+            request.onerror = function() {
+                document.getElementById('result').textContent = "Erreur lors de la récupération des données.";
+            };
+        });
+    </script>
+</body>
+</html>
