@@ -1,0 +1,32 @@
+/* Sélectionner tous les titres h2 */
+h2 {
+    font-size: 24px;
+    color: darkblue;
+}
+
+/* Sélecteur de classe pour les missions */
+.mission {
+    margin-bottom: 20px;
+}
+
+/* Modifier l'apparence d'un bouton au survol */
+button:hover {
+    background-color: green;
+    color: white;
+}
+
+/* Modifier la bordure des champs de saisie au focus */
+input:focus {
+    border-color: blue;
+}
+
+/* Ajouter du contenu avant un titre */
+h2::before {
+    content: "Mission : ";
+    font-weight: bold;
+}
+
+/* Sélecteur combiné : styliser un élément actif */
+.mission.active button {
+    background-color: orange;
+}
