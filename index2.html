@@ -1,0 +1,67 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulaire de soumission de mission pour l'académie militaire.">
+    <meta name="author" content="Académie Militaire">
+    <title>Formulaire de Soumission de Mission</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Formulaire de Soumission de Mission</h1>
+
+    <form action="submit.html" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Informations de la Mission</legend>
+
+            <label for="missionTitle">Titre de la Mission :</label>
+            <input type="text" id="missionTitle" name="missionTitle" required><br><br>
+
+            <label for="missionDate">Date de la Mission :</label>
+            <input type="date" id="missionDate" name="missionDate" required><br><br>
+
+            <label for="description">Description de la Mission :</label>
+            <textarea id="description" name="description" required></textarea><br><br>
+
+            <label for="missionImage">Télécharger une Image de la Mission :</label>
+            <input type="file" id="missionImage" name="missionImage" accept="image/*" onchange="previewImage(event)" required><br><br>
+            <img id="imagePreview" src="" alt="Aperçu de l'image" width="200" style="display:none;"><br><br>
+
+            <label for="missionType">Type de Mission :</label>
+            <select id="missionType" name="missionType">
+                <option value="reconnaissance">Reconnaissance</option>
+                <option value="attaque">Attaque</option>
+                <option value="défense">Défense</option>
+            </select><br><br>
+
+            <label for="missionEquip">Equipement Nécessaire :</label>
+            <input type="checkbox" id="missionEquip" name="missionEquip" value="binoculars"> Jumelles
+            <input type="checkbox" id="missionEquip" name="missionEquip" value="map"> Carte<br><br>
+
+            <label for="documents">Documents à Télécharger :</label>
+            <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx"><br><br>
+
+            <button type="submit">Soumettre la Mission</button>
+        </fieldset>
+    </form>
+
+    <a href="#missionList">Voir la liste des missions soumises</a>
+
+    <footer>
+        <p><a href="missions.html">Voir toutes les missions soumises</a> | <a href="downloads.html">Télécharger les documents nécessaires</a> | <a href="login.html">Se connecter</a></p>
+    </footer>
+
+    <script>
+        function previewImage(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('imagePreview');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>

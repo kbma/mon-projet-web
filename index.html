@@ -1,67 +1,107 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Formulaire de soumission de mission pour l'académie militaire.">
-    <meta name="author" content="Académie Militaire">
-    <title>Formulaire de Soumission de Mission</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>CV de Kamel Abbassi</title>
+    <link rel="stylesheet" href="stylesKamel.css">
 </head>
 <body>
-    <h1>Formulaire de Soumission de Mission</h1>
+    <header>
+        <div class="container">
+            <img src="kamel.jpg" alt="Kamel Abbassi" class="profile-img">
+            <div class="header-info">
+                <h1>Kamel Abbassi</h1>
+                <p>Consultant et Formateur en Technologies Web</p>
+            </div>
+        </div>
+    </header>
 
-    <form action="submit.html" method="POST" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Informations de la Mission</legend>
+    <section class="about">
+        <h2>À propos de moi</h2>
+        <p>Je suis consultant et formateur en technologies web avec plus de 10 ans d'expérience dans le développement de solutions web innovantes et l'accompagnement de professionnels. Passionné par l'enseignement, j'aide mes étudiants à acquérir des compétences solides pour exceller dans le monde du développement web.</p>
+    </section>
 
-            <label for="missionTitle">Titre de la Mission :</label>
-            <input type="text" id="missionTitle" name="missionTitle" required><br><br>
+    <section class="experience">
+        <h2>Expérience</h2>
+        <ul>
+            <li>
+                <h3>Consultant en développement web</h3>
+                <p><em>2015 - Présent</em></p>
+                <p>Conseil en stratégie web et développement de projets numériques pour diverses entreprises, en particulier dans les secteurs de la finance et de l'éducation.</p>
+            </li>
+            <li>
+                <h3>Formateur en technologies web</h3>
+                <p><em>2010 - Présent</em></p>
+                <p>Formation sur des sujets variés tels que le développement frontend et backend, Symfony, React, et JavaScript dans des environnements académiques et professionnels.</p>
+            </li>
+        </ul>
+    </section>
 
-            <label for="missionDate">Date de la Mission :</label>
-            <input type="date" id="missionDate" name="missionDate" required><br><br>
+    <section class="skills">
+        <h2>Compétences</h2>
+        <ul>
+            <li>PHP (Symfony, Laravel)</li>
+            <li>JavaScript (React, Node.js)</li>
+            <li>HTML/CSS</li>
+            <li>Gestion de bases de données (MySQL, PostgreSQL)</li>
+            <li>Formation et coaching professionnels</li>
+        </ul>
+    </section>
 
-            <label for="description">Description de la Mission :</label>
-            <textarea id="description" name="description" required></textarea><br><br>
+    <section class="education">
+        <h2>Formation</h2>
+        <ul>
+            <li>
+                <h3>Doctorat en systèmes de communication</h3>
+                <p><em>2012 - 2015</em>, École Nationale d'Ingénieurs de Tunis</p>
+            </li>
+            <li>
+                <h3>Master en informatique</h3>
+                <p><em>2008 - 2011</em>, Université de Tunis</p>
+            </li>
+        </ul>
+    </section>
 
-            <label for="missionImage">Télécharger une Image de la Mission :</label>
-            <input type="file" id="missionImage" name="missionImage" accept="image/*" onchange="previewImage(event)" required><br><br>
-            <img id="imagePreview" src="" alt="Aperçu de l'image" width="200" style="display:none;"><br><br>
+    <section class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-gallery">
+            <div class="portfolio-item">
+                <img src="./images/i1.jpg" alt="Project 1">
+                <p>Développement d'une application e-commerce</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/i2.jpg" alt="Project 2">
+                <p>Création d'une plateforme de formation en ligne</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="./images/i3.jpg" alt="Project 3">
+                <p>Développement d'une application mobile pour gestion de tâches</p>
+            </div>
+        </div>
+    </section>
 
-            <label for="missionType">Type de Mission :</label>
-            <select id="missionType" name="missionType">
-                <option value="reconnaissance">Reconnaissance</option>
-                <option value="attaque">Attaque</option>
-                <option value="défense">Défense</option>
-            </select><br><br>
-
-            <label for="missionEquip">Equipement Nécessaire :</label>
-            <input type="checkbox" id="missionEquip" name="missionEquip" value="binoculars"> Jumelles
-            <input type="checkbox" id="missionEquip" name="missionEquip" value="map"> Carte<br><br>
-
-            <label for="documents">Documents à Télécharger :</label>
-            <input type="file" id="documents" name="documents" accept=".pdf,.doc,.docx"><br><br>
-
-            <button type="submit">Soumettre la Mission</button>
-        </fieldset>
-    </form>
-
-    <a href="#missionList">Voir la liste des missions soumises</a>
+    <section class="contact">
+        <h2>Contactez-moi</h2>
+        <form action="send_message.php" method="POST">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Envoyer</button>
+        </form>
+    </section>
 
     <footer>
-        <p><a href="missions.html">Voir toutes les missions soumises</a> | <a href="downloads.html">Télécharger les documents nécessaires</a> | <a href="login.html">Se connecter</a></p>
+        <p>Contactez-moi à : <a href="mailto:kamel@example.com">kamel@example.com</a></p>
     </footer>
-
-    <script>
-        function previewImage(event) {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-            reader.onload = function() {
-                const output = document.getElementById('imagePreview');
-                output.src = reader.result;
-                output.style.display = 'block';
-            };
-            reader.readAsDataURL(file);
-        }
-    </script>
 </body>
 </html>
