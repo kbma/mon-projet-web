@@ -3,63 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Structuration HTML Sémantique</title>
+    <title>Structuration HTML</title>
 </head>
 <body>
-    <!-- En-tête -->
     <header>
-        <h1>Structuration HTML Sémantique</h1>
+        <h1>Structuration du contenu HTML</h1>
         <nav>
             <ul>
-                <li><a href="#liste">Liste des articles</a></li>
-                <li><a href="#tableau">Tableau des données</a></li>
+                <li><a href="#objectifs">Objectifs</a></li>
+                <li><a href="#balises-structurelles">Balises structurelles</a></li>
+                <li><a href="#exercice">Exercice pratique</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Section principale -->
     <main>
-        <section id="liste">
-            <h2>Liste des courses</h2>
+        <!-- Section 1: Objectifs -->
+        <section id="objectifs">
+            <h2>Objectifs et avantages des balises sémantiques</h2>
+            <p>Les balises sémantiques rendent le contenu HTML lisible pour les humains, accessible pour les utilisateurs ayant des besoins spécifiques, et optimisé pour les moteurs de recherche.</p>
             <ul>
-                <li>Pomme</li>
-                <li>Lait</li>
-                <li>Céréales</li>
+                <li>Améliorer la compréhension du code.</li>
+                <li>Renforcer l'accessibilité.</li>
+                <li>Optimiser le référencement naturel (SEO).</li>
             </ul>
         </section>
 
-        <section id="tableau">
-            <h2>Tableau des données</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Âge</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Jean</td>
-                        <td>30</td>
-                    </tr>
-                    <tr>
-                        <td>Marie</td>
-                        <td>25</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Section 2: Balises structurelles -->
+        <section id="balises-structurelles">
+            <h2>Balises structurelles et sémantiques</h2>
+            <article>
+                <h3>Exemple : Articles multiples</h3>
+                <section>
+                    <article>
+                        <h4>Article 1</h4>
+                        <p>Contenu de l'article 1...</p>
+                    </article>
+                    <article>
+                        <h4>Article 2</h4>
+                        <p>Contenu de l'article 2...</p>
+                    </article>
+                </section>
+            </article>
+            <article>
+                <h3>Exemple : Utilisation des asides</h3>
+                <main>
+                    <p>Contenu principal de la page...</p>
+                    <aside>
+                        <h4>Contenu connexe</h4>
+                        <p>Citation, publicité ou lien complémentaire.</p>
+                    </aside>
+                </main>
+            </article>
+            <article>
+                <h3>Exemple : Sections imbriquées</h3>
+                <section>
+                    <h4>Section principale</h4>
+                    <section>
+                        <h5>Sous-section 1</h5>
+                        <p>Contenu de la sous-section 1...</p>
+                    </section>
+                    <section>
+                        <h5>Sous-section 2</h5>
+                        <p>Contenu de la sous-section 2...</p>
+                    </section>
+                </section>
+            </article>
         </section>
 
-        <!-- Encadré latéral -->
-        <aside>
-            <h3>Informations complémentaires</h3>
-            <p>Publicité ou contenu complémentaire.</p>
-        </aside>
+        <!-- Section 3: Exercice pratique -->
+        <section id="exercice">
+            <h2>Exercice pratique : Structuration HTML</h2>
+            <p>Créez une page HTML structurée avec les éléments suivants :</p>
+            <ol>
+                <li>Un en-tête contenant un titre et un menu.</li>
+                <li>Une section principale contenant :
+                    <ul>
+                        <li>Une liste d'articles.</li>
+                        <li>Un tableau affichant des données fictives.</li>
+                    </ul>
+                </li>
+                <li>Un pied de page avec des informations légales.</li>
+            </ol>
+        </section>
     </main>
 
-    <!-- Pied de page -->
     <footer>
-        <p>&copy; 2024 Mon site HTML Sémantique. Tous droits réservés.</p>
+        <p>&copy; 2024 Mon Site. Tous droits réservés.</p>
+        <nav>
+            <a href="#objectifs">Retour en haut</a>
+        </nav>
     </footer>
 </body>
 </html>
