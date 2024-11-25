@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Profil Utilisateur</title>
+    <style>
+        /* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#main-header {
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.navigation {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #007BFF;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: #0056b3;
+}
+
+#presentation {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.details {
+    flex: 1;
+}
+
+.highlight {
+    color: #007BFF;
+    font-weight: bold;
+}
+
+#informations {
+    padding: 20px;
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #f0f0f0;
+}
+
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <h1>Profil Utilisateur</h1>
+    </header>
+
+    <nav class="navigation">
+        <a href="#presentation" class="nav-link">Présentation</a>
+        <a href="#informations" class="nav-link">Informations</a>
+        <a href="#footer" class="nav-link">Contact</a>
+    </nav>
+
+    <section id="presentation">
+        <div class="avatar">
+            <img src="kamel.jpg" alt="Photo de profil">
+        </div>
+        <div class="details">
+            <h2>Kamel ABBASSI</h2>
+            <p>Développeur Web passionné. <span class="highlight">Spécialité : Frontend</span>.</p>
+        </div>
+    </section>
+
+    <section id="informations">
+        <h3>Informations supplémentaires</h3>
+        <ul>
+            <li>Adresse : Tunis, Rue de Kef 4Km</li>
+            <li>Email : abbassi.kamel@gmail.com</li>
+            <li>Téléphone : +216 366 202</li>
+        </ul>
+    </section>
+
+    <footer id="footer">
+        <p>&copy; 2024 Kamel ABBASSI. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

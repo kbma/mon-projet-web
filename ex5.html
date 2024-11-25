@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 15px;
+        }
+
+
+/* Conteneur des slides */
+#slides {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Hauteur du slider */
+    overflow: hidden; /* Cache le contenu débordant */
+}
+
+/* Images dans le slider */
+#slides img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que les images remplissent le conteneur sans déformation */
+    opacity: 0; /* Masqué par défaut */
+    transition: opacity 1s ease; /* Transition en douceur */
+}
+
+/* Animation des images */
+@keyframes toggleSlides {
+    0%, 50% {
+        opacity: 1; /* Affiche la première image */
+    }
+    50.01%, 100% {
+        opacity: 0; /* Masque la première image */
+    }
+}
+
+/* Appliquer l'animation à la première image */
+#slides img:first-child {
+    animation: toggleSlides 10s infinite; /* Animation de 10 secondes */
+}
+
+/* Appliquer l'animation à la deuxième image */
+#slides img:nth-child(2) {
+    animation: toggleSlides 10s infinite;
+    animation-delay: 5s; /* Décalage pour afficher après la première image */
+}
+
+
+
+
+        header {
+            background-color: #5dade2;
+            height: 40px;
+            position: sticky;
+            margin-bottom: 30px;
+            top: 0px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        nav a {
+
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        h2 {
+            background-color: bisque;
+            margin-top: 10px;
+            border: 1px dotted;
+            text-align: center;
+
+        }
+
+        #articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            /* Espace entre les éléments */
+
+        }
+
+        #articles>article img {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+            /* Centrage horizontal */
+        }
+
+        #articles>article {
+            box-shadow: 5px 5px 5px rgb(139, 136, 136);
+            padding: 10px;
+        }
+
+        #articles>article:hover {
+            box-shadow: 5px 5px 5px rgb(195, 15, 15);
+            padding: 10px;
+        }
+
+        #articles>article h3 {
+            color: blue;
+            text-align: center;
+            margin: 5px 5px;
+            background-color: azure;
+            border: 1px solid red;
+        }
+
+        #articles>article h3:hover {
+            color: blue;
+            text-align: center;
+            margin: 5px 5px;
+            background-color: rgb(41, 224, 224);
+            border: 1px solid red;
+        }
+
+        #articles>article p {
+            text-align: justify;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            height: 30px;
+            background-color: rgb(246, 250, 215);
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        label {
+            color: blue;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        section {
+            margin-top: 25px;
+        }
+
+        input[type="submit"] {
+            background-color: rgb(88, 209, 249);
+            color: rgb(27, 4, 4);
+            display: block;
+            height: 50px;
+            font-size: 18px;
+
+        }
+
+        #slides>article {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            animation: slide 6s infinite;
+        }
+
+        #slide img {
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        /* Animation */
+        @keyframes slide {
+
+            0%,
+            50% {
+                transform: translateX(0);
+                /* Show first image */
+            }
+
+            50.01%,
+            100% {
+                transform: translateX(-50%);
+                /* Show second image */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="accueil">
+            <h2>Accuiel</h2>
+            
+            <section id="slides">       
+                   
+                    <img src="./images/i1.jpg" />               
+                    
+                    <img src="./images/i2.jpg" />
+                
+            </section>
+        </section>
+        <section id="services">
+            <h2>Services</h2>
+            <section id="articles">
+                <article>
+                    <h3>Service 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium recusandae iusto deleniti
+                        quo
+                        excepturi atque iure dolorem reprehenderit iste quas veritatis rerum, quo, non libero
+                        necessitatibus
+                        iusto molestias. Quos, incidunt nobis.</p>
+                    <img src="./images/i1.jpg" alt="" srcset="">
+                </article>
+                <article>
+                    <h3>service 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium recusandae iusto deleniti
+                        quo
+                        dolorem rerum illum, provident magni autem quod similique tempora, aut doloremque itaque minima
+                        iusto molestias. Quos, incidunt nobis.</p>
+                    <img src="./images/i1.jpg" alt="" srcset="">
+                </article>
+                <article>
+                    <h3>Service 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium recusandae iusto deleniti
+                        quo
+                        excepturi atque iure dolorem reprehenderit iste quas veritatis rerum, quo, non libero
+                        necessitatibus
+                        iusto molestias. Quos, incidunt nobis.</p>
+                    <img src="./images/i1.jpg" alt="" srcset="">
+                </article>
+            </section>
+
+        </section>
+        <section id="contact">
+            <h2>contact</h2>
+
+            <form action="">
+                <p>Pour toute demande, veuillez nous contacter.</p>
+                <form>
+                    <label for="name">Nom :</label><br>
+                    <input type="text" id="name" name="name"><br><br>
+                    <label for="email">Email :</label><br>
+                    <input type="email" id="email" name="email"><br><br>
+                    <label for="name">Message :</label><br>
+                    <textarea id="message" cols="50px" rows="10px"></textarea>
+                    <br><br>
+                    <input type="submit" value="Envoyer">
+                </form>
+
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>

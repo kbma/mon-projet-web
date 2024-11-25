@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 100%;
+            
+        }
+        th, td{
+            padding: 10px;
+        }
+        tbody>tr:hover{
+            background-color: antiquewhite;
+        }
+        caption{
+            color: rgb(195, 15, 215);
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            
+        }
+        tfoot{
+            background-color: beige;
+            font-size: 18px;
+
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption>
+            La liste des produits
+        </caption>
+        <thead style="background-color: #f0f0f0;">
+          <tr>
+            <th >Nom</th>
+            <th >Prix</th>
+            <th >Quantité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td >Produit A</td>
+            <td >10 TND</td>
+            <td >5</td>
+          </tr>
+          <tr>
+            <td >Produit B</td>
+            <td >20 TND</td>
+            <td >3</td>
+          </tr>
+          <tr>
+
+          
+            <td >Produit B</td>
+            <td >20 TND</td>
+            <td >3</td>
+          </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">
+                    Somme total: 170 TND
+                </td>
+            </tr>
+        </tfoot>
+      </table>
+      
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p {
+            position: static;
+            /* Valeur par défaut */
+            margin: 10px 0;
+        }
+
+        .title {
+            position: relative;
+            left: 20px;
+            /* Décalage de 20px à droite */
+        }
+
+        .card {
+            position: relative;
+            /* Parent positionné */
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 200px;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            /* Décalé de 10px par rapport au haut du parent */
+            right: 10px;
+            /* Décalé de 10px par rapport à la droite du parent */
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            /* Décalé de 20px du bas de la fenêtre */
+            right: 20px;
+            /* Décalé de 20px de la droite de la fenêtre */
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            /* Devient fixe lorsqu'elle atteint le haut de la fenêtre */
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            z-index: 1000;
+            /* S'affiche au-dessus d'autres éléments */
+        }
+
+        .banner {
+    display: block;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.articles {
+    width: 100%;
+    overflow: hidden; /* Empêche les flottants de dépasser */
+}
+
+.article {
+    float: left;
+    width: 25%;
+    margin: 1.66%;
+    background-color: #e9ecef;
+    padding: 10px;
+    border: 1px solid;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: #377ec5;
+    padding: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 20px;
+}
+
+.header {
+    grid-area: header;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.content {
+    grid-area: content;
+    background-color: #e9ecef;
+    padding: 20px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">Navigation</header>
+
+    <nav class="navbar">
+        <a href="#">Accueil</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+    </nav>
+    
+
+    <section>
+        <p>Beaucoup de texte pour simuler le défilement...</p>
+    </section>
+
+    <div>
+        <h1 class="title">Mon titre</h1>
+
+        <p>Ceci est un paragraphe dans le flux normal de la page.</p>
+        <p>Un autre paragraphe s'affichera juste en dessous.</p>
+    </div>
+
+
+    <div class="card">
+        <h2>Titre de la carte</h2>
+        <div class="badge">Nouveau</div>
+        <p>Contenu de la carte.</p>
+    </div>
+
+    <button class="back-to-top">↑</button>
+
+
+    <div class="banner">
+        <h1>Découvrez nos offres !</h1>
+        <button class="cta-button">En savoir plus</button>
+    </div>
+    <div class="articles">
+        <div class="article">Article 1</div>
+        <div class="article">Article 2</div>
+        <div class="article">Article 3</div>
+    </div>
+    
+    <div class="dashboard">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+    </div>
+    
+</body>
+
+</html>
