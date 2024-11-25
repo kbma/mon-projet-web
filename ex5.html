@@ -16,67 +16,93 @@
         }
 
 
-/* Conteneur des slides */
-#slides {
-    position: relative;
-    width: 100%;
-    height: 200px; /* Hauteur du slider */
-    overflow: hidden; /* Cache le contenu débordant */
-}
+        /* Conteneur des slides */
+        #slides {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            /* Hauteur du slider */
+            overflow: hidden;
+            /* Cache le contenu débordant */
+        }
 
-/* Images dans le slider */
-#slides img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Assure que les images remplissent le conteneur sans déformation */
-    opacity: 0; /* Masqué par défaut */
-    transition: opacity 1s ease; /* Transition en douceur */
-}
+        /* Images dans le slider */
+        #slides img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Assure que les images remplissent le conteneur sans déformation */
+            opacity: 0;
+            /* Masqué par défaut */
+            transition: opacity 1s ease;
+            /* Transition en douceur */
+        }
 
-/* Animation des images */
-@keyframes toggleSlides {
-    0%, 50% {
-        opacity: 1; /* Affiche la première image */
-    }
-    50.01%, 100% {
-        opacity: 0; /* Masque la première image */
-    }
-}
+        /* Animation des images */
+        @keyframes toggleSlides {
 
-/* Appliquer l'animation à la première image */
-#slides img:first-child {
-    animation: toggleSlides 10s infinite; /* Animation de 10 secondes */
-}
+            0%,
+            50% {
+                opacity: 1;
+                /* Affiche la première image */
+            }
 
-/* Appliquer l'animation à la deuxième image */
-#slides img:nth-child(2) {
-    animation: toggleSlides 10s infinite;
-    animation-delay: 5s; /* Décalage pour afficher après la première image */
-}
+            50.01%,
+            100% {
+                opacity: 0;
+                /* Masque la première image */
+            }
+        }
+
+        /* Appliquer l'animation à la première image */
+        #slides img:first-child {
+            animation: toggleSlides 10s infinite;
+            /* Animation de 10 secondes */
+        }
+
+        /* Appliquer l'animation à la deuxième image */
+        #slides img:nth-child(2) {
+            animation: toggleSlides 10s infinite;
+            animation-delay: 5s;
+            /* Décalage pour afficher après la première image */
+        }
 
 
 
 
         header {
             background-color: #5dade2;
-            height: 40px;
+            height: 50px;
             position: sticky;
             margin-bottom: 30px;
             top: 0px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
         }
 
-        header nav ul li {
+        header nav ul li{
             display: inline-block;
             padding: 10px;
+            background-color: rgb(41, 120, 230);
+            border-radius: 5px;
         }
 
+        header nav ul li:hover{
+            display: inline-block;
+            padding: 10px;
+            background-color: rgb(6, 57, 128);
+            border-radius: 5px;
+        }
         nav a {
 
             text-decoration: none;
             color: white;
             font-size: 18px;
         }
+
+        
 
         h2 {
             background-color: bisque;
@@ -207,13 +233,13 @@
     <main>
         <section id="accueil">
             <h2>Accuiel</h2>
-            
-            <section id="slides">       
-                   
-                    <img src="./images/i1.jpg" />               
-                    
-                    <img src="./images/i2.jpg" />
-                
+
+            <section id="slides">
+
+                <img src="./images/i1.jpg" />
+
+                <img src="./images/i2.jpg" />
+
             </section>
         </section>
         <section id="services">
